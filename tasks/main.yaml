@@ -1,0 +1,19 @@
+---
+- name: folder Creation
+  command: mkdir {{directory}}
+
+- name: create a file under admin folder
+  command: touch {{directory}}/{{file}}
+
+- name: change permission 
+  command:  chmod 755 {{directory}}/{{file}}
+
+- name : owner chnage
+  command: chown root:root {{directory}}/{{file}}
+
+- name : file mv to tmp location
+  command: mv admin/file.txt /tmp/hello.txt
+
+- name: cp to home
+  command: cp -rvf  /tmp/hello.txt  /home/hello.txt 
+  
